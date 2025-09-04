@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { evaluate } from '../src/evaluate'
+import { evaluate } from '../src/shared/lib/evaluate'
 
 describe('evaluate extra cases', ()=>{
   it('handles no matches', ()=>{

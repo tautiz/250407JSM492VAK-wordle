@@ -1,0 +1,236 @@
+:root {
+  --bg: #1a1a2e;
+  --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --text: #ffffff;
+  --text-muted: #b8b8b8;
+  --correct: #6aaa64;
+  --present: #c9b458;
+  --absent: #4a4a4a;
+  --cell-empty: #2d2d2d;
+  --cell-filled: #3a3a3a;
+  --key-bg: #4a4a4a;
+  --key-hover: #5a5a5a;
+  --submit-bg: #ffffff;
+  --submit-text: #1a1a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  background: var(--header-gradient);
+  width: 100vw;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.header h1 {
+  color: white;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.grid {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: var(--cell-empty);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.cell.filled {
+  background: var(--cell-filled);
+  border-color: #666;
+}
+
+.cell.correct {
+  background: var(--correct);
+  color: white;
+  border-color: var(--correct);
+}
+
+.cell.present {
+  background: var(--present);
+  color: white;
+  border-color: var(--present);
+}
+
+.cell.absent {
+  background: var(--absent);
+  color: white;
+  border-color: var(--absent);
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.krow {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.key {
+  padding: 12px 8px;
+  border-radius: 6px;
+  border: 0;
+  background: var(--key-bg);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key:hover {
+  background: var(--key-hover);
+  transform: translateY(-1px);
+}
+
+.key.correct {
+  background: var(--correct);
+}
+
+.key.present {
+  background: var(--present);
+}
+
+.key.absent {
+  background: var(--absent);
+}
+
+.key.action {
+  padding: 12px 16px;
+  font-size: 12px;
+  min-width: 60px;
+}
+
+.submit-button {
+  background: var(--submit-bg);
+  color: var(--submit-text);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+}
+
+.message {
+  margin: 20px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.help {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.help button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.help button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}

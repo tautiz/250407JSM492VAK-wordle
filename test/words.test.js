@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { isValidWord, pickRandom, WORDS } from '../src/words'
+import { isValidWord, pickRandom, WORDS } from '../src/shared/lib/words'
 
 describe('words module', ()=>{
   it('has WORDS array with entries', ()=>{

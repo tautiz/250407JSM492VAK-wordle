@@ -2,8 +2,8 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect, vi } from 'vitest'
-import App from '../src/App'
-import * as wordsMod from '../src/words'
+import App from '../src/app/App'
+import * as wordsMod from '../src/shared/lib/words'
 
 describe('App messages and timeout', ()=>{
   it('shows and auto-hides message after 3s', async ()=>{

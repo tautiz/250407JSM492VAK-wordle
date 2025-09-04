@@ -2,8 +2,8 @@ import React from 'react'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import App from '../src/App'
-import * as wordsMod from '../src/words'
+import App from '../src/app/App'
+import * as wordsMod from '../src/shared/lib/words'
 import { vi } from 'vitest'
 
 describe('App integration', ()=>{
